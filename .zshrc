@@ -29,4 +29,4 @@ unset file
 eval "$(gh copilot alias -- zsh)"
 
 # Created by pipx
-export PATH="$PATH:/Users/coreyschafer/.local/bin"
+export PATH="$PATH:/Users/$USER/.local/bin"

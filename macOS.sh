@@ -20,7 +20,7 @@ defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool tr
 killall ControlCenter
 
 # Get the absolute path to the image
-IMAGE_PATH="${HOME}/dotfiles/settings/Desktop.png"
+IMAGE_PATH="${HOME}/dotfiles/settings/Jason_and_Lucia_01_ultrawide.jpg"
 
 # AppleScript command to set the desktop background
 osascript <<EOF
@@ -33,3 +33,6 @@ tell application "System Events"
     end repeat
 end tell
 EOF
+# osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"/path/to/your/image.jpg\" as POSIX file"
+# osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"/path/to/your/image.jpg\" as POSIX file"
+# osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/path/to/your/image.jpg"'

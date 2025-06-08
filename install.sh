@@ -39,4 +39,7 @@ ln -sf "${dotfiledir}/settings/ruff.toml" "${HOME}/.config/ruff/ruff.toml"
 # Run the Sublime Script
 ./sublime.sh
 
+# Run Rust Script
+./rust.sh
+
 echo "Installation Complete!"

@@ -42,10 +42,12 @@ brew cleanup
 
 # Define an array of packages to install using Homebrew.
 packages=(
+    "coreutils"
     "python"
     "tcl-tk"
     "python-tk"
     "bash"
+    "bash-completion2"
     "zsh"
     "git"
     "tree"
@@ -53,6 +55,10 @@ packages=(
     "uv"
     "pipx"
     "gh"
+    "ffmpeg"
+    "exiftools"
+    "jupyter"
+    "vim --with-override-system-vi"
 )
 
 # Loop over the array to install each application.
@@ -133,7 +139,7 @@ $(brew --prefix)/bin/pipx install ruff
 # Define an array of applications to install using Homebrew Cask.
 apps=(
     "google-chrome"
-    "firefox"
+    # "firefox"
     "brave-browser"
     "sublime-text"
     "visual-studio-code"
@@ -146,6 +152,7 @@ apps=(
     "rectangle"
     "postman"
     "keyboardcleantool"
+    "meshlab"
 )
 
 # Loop over the array to install each application.

@@ -126,5 +126,10 @@
 
   // SQL Tools settings
   "sqltools.useNodeRuntime": true,
-  "liveServer.settings.donotShowInfoMsg": true
+  "liveServer.settings.donotShowInfoMsg": true,
+  "git.openRepositoryInParentFolders": "never",
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh"
 }
