@@ -8,4 +8,6 @@ done
 unset file
 
 # GitHub Copilot CLI shell integration
-eval "$(gh copilot alias -- bash)"
+if command -v gh >/dev/null 2>&1; then
+    eval "$(gh copilot alias -- bash 2>/dev/null)"
+fi

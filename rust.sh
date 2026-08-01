@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 cargo update
 cargo install coreutils
@@ -11,8 +11,6 @@ cargo install du-dust
 brew install dust
 
 brew install nushell
-which nu | sudo tee -a /etc/shells
-chsh -s $(which nu)
 
 brew install ripgrep
 brew install fd
@@ -21,7 +19,8 @@ brew install bat
 cargo install zoxide --locked
 brew install zoxide
 eval "$(zoxide init zsh)"
-zoxide init fish | source
+mkdir -p ~/.config/fish
+zoxide init fish >>~/.config/fish/config.fish
 # alias cd=zoxide
 
 cargo install eza

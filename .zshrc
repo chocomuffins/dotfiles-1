@@ -26,7 +26,9 @@ done
 unset file
 
 # GitHub Copilot CLI shell integration
-eval "$(gh copilot alias -- zsh)"
+if command -v gh >/dev/null 2>&1; then
+    eval "$(gh copilot alias -- zsh 2>/dev/null)"
+fi
 
 # Created by pipx
 export PATH="$PATH:/Users/$USER/.local/bin"

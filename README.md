@@ -55,13 +55,14 @@ This script will:
 -  Run macOS-specific configurations
 -  Install Homebrew packages and casks
 -  Configure Sublime Text and Visual Studio Code
+-  Install Rust and Rust-adjacent CLI tools (fish, nushell, zoxide, starship, ripgrep, and more) via `rust.sh`
 
 ## Configuration Files
 
 -  `.bashrc` & `.zshrc`: Shell configuration files for Bash and Zsh.
 -  `.shared_prompt`: Custom prompt setup used by both `.bash_prompt` & `.zprompt`
 -  `.bash_prompt` & `.zprompt`: Custom prompt setup for Bash and Zsh.
--  `.bash_profile: Setting system-wide environment variables
+-  `.bash_profile`: Setting system-wide environment variables
 -  `.aliases`: Aliases for common commands. Some are personalized to my machines specifically (e.g. the 'yt' alias opening my YouTube Scripts')
 -  `.private`: This is a file you'll create locally to hold private information and shouldn't be uploaded to version control
 -  `settings/`: Directory containing editor settings and themes for Sublime Text and Visual Studio Code.
