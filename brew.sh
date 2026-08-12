@@ -51,6 +51,7 @@ packages=(
     "zsh"
     "git"
     "tree"
+    "cmake"
     "node"
     "uv"
     "pipx"
@@ -58,7 +59,11 @@ packages=(
     "ffmpeg"
     "exiftools"
     "jupyter"
+    "pyenv"
+    "jq"
+    "direnv"
     "vim --with-override-system-vi"
+    "emacs"
 )
 
 # Loop over the array to install each application.
@@ -126,6 +131,31 @@ $(brew --prefix)/bin/gh extension install github/gh-copilot
 
 # Create the tutorial virtual environment I use frequently
 $(brew --prefix)/bin/python3 -m venv "${HOME}/tutorial"
+
+# Install commonly used Python libraries into the tutorial venv
+$(brew --prefix)/bin/uv pip install --python "${HOME}/tutorial/bin/python3" \
+    python-dotenv \
+    selenium \
+    numpy \
+    matplotlib \
+    requests \
+    pandas \
+    pyyaml \
+    pillow \
+    scipy \
+    jupyter \
+    ipykernel \
+    scikit-learn \
+    seaborn \
+    ruff \
+    pytest \
+    pytest-cov \
+    mypy \
+    pylint \
+    pre-commit \
+    rich \
+    tqdm \
+    opencv-python
 
 # Install Prettier, which I use in both VSCode and Sublime Text
 $(brew --prefix)/bin/npm install --global prettier

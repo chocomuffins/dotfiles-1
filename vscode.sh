@@ -17,6 +17,7 @@ extensions=(
     mechatroner.rainbow-csv
     monosans.djlint
     ms-python.mypy-type-checker
+    ms-python.pylint
     ms-python.python
     ms-toolsai.jupyter
     ms-vscode.theme-predawnkit
