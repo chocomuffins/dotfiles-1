@@ -173,6 +173,7 @@ apps=(
     "brave-browser"
     "sublime-text"
     "visual-studio-code"
+    "vscodium"
     "git-credential-manager"
     "spotify"
     "discord"

@@ -12,8 +12,6 @@ extensions=(
     esbenp.prettier-vscode
     formulahendry.code-runner
     foxundermoon.shell-format
-    github.copilot
-    github.copilot-chat
     mechatroner.rainbow-csv
     monosans.djlint
     ms-python.mypy-type-checker
@@ -59,6 +57,48 @@ fi
 
 # Open VS Code to sign-in to extensions
 code .
-echo "Login to extensions (Copilot, Grammarly, etc) within VS Code."
+echo "Login to extensions within VS Code."
 echo "Press enter to continue..."
 read
+
+############################
+# VSCodium
+############################
+
+if command -v codium &>/dev/null; then
+    # Note: VSCodium uses the Open VSX registry by default, not the Microsoft
+    # Marketplace, so some extensions (e.g. ms-python.*) may be unavailable
+    # or require manually enabling the MS Marketplace source.
+    installed_codium_extensions=$(codium --list-extensions)
+
+    for extension in "${extensions[@]}"; do
+        if echo "$installed_codium_extensions" | grep -qi "^$extension$"; then
+            echo "$extension is already installed in VSCodium. Skipping..."
+        else
+            echo "Installing $extension in VSCodium..."
+            codium --install-extension "$extension"
+        fi
+    done
+
+    echo "VSCodium extensions have been installed."
+
+    # Define the target directory for VSCodium user settings on macOS
+    VSCODIUM_USER_SETTINGS_DIR="${HOME}/Library/Application Support/VSCodium/User"
+
+    if [ -d "$VSCODIUM_USER_SETTINGS_DIR" ]; then
+        ln -sf "${HOME}/dotfiles/settings/VSCode-Settings.json" "${VSCODIUM_USER_SETTINGS_DIR}/settings.json"
+        ln -sf "${HOME}/dotfiles/settings/VSCode-Keybindings.json" "${VSCODIUM_USER_SETTINGS_DIR}/keybindings.json"
+
+        echo "VSCodium settings and keybindings have been updated."
+    else
+        echo "VSCodium user settings directory does not exist. Please ensure VSCodium is installed."
+    fi
+
+    # Open VSCodium to sign-in to extensions
+    codium .
+    echo "Login to extensions within VSCodium."
+    echo "Press enter to continue..."
+    read
+else
+    echo "codium command not found. Skipping VSCodium setup."
+fi
